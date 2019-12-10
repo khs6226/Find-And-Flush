@@ -9,7 +9,6 @@ yarn-error.log*
 # misc
 .DS_Store
 .DS_Store?
-.meteor
 
 # environment
 .env 
