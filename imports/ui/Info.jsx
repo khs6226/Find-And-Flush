@@ -4,6 +4,7 @@ import Links from '../api/links';
 
 class Info extends Component {
   render() {
+    console.log(this.props);
     const links = this.props.links.map(
       link => this.makeLink(link)
     );
