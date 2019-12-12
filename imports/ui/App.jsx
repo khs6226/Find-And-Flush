@@ -1,14 +1,13 @@
 import React from 'react';
 import Hello from './Hello.jsx';
 import Info from './Info.jsx';
-import Washroom from './washroomInfo.jsx';
+import Washroom from './WashroomInfo.jsx';
+import ReviewForm from './ReviewForm'
 
 const App = () => (
   <div>
-    <h1>Welcome to Meteor!</h1>
-    <Hello />
-    <Info />
-    <Washroom />
+    <ReviewForm />
+    {/* <Washroom /> */}
   </div>
 );
 
