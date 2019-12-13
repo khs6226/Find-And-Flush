@@ -9,7 +9,6 @@ import WashroomItemList from '../WashroomItemList/WashroomItemList'
 class ListView extends Component {
 
     renderWashrooms() {
-        console.log(this.props);
         return this.props.washrooms.map((washroom) => (
             <WashroomItemList key={washroom._id} washroom={washroom} />
         ));
