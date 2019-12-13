@@ -2,15 +2,15 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Washrooms } from '../api/washrooms.js';
 
+import { Washrooms }  from '../../api/washrooms';
+import WashroomItemList from '../WashroomItemList/WashroomItemList'
 
 class ListView extends Component {
 
-
     renderWashrooms() {
         return this.props.washrooms.map((washroom) => (
-            <Washroom key={washroom._id} washroom={washroom} />
+            <WashroomItemList key={washroom._id} washroom={washroom} />
         ));
     }
 
@@ -30,8 +30,9 @@ class ListView extends Component {
 }
 
 export default withTracker(() => {
+    Meteor.subscribe('washrooms');
+  
     return {
         washrooms: Washrooms.find({}).fetch(),
-    };
-})(withStyles)(styles)(ListView);
+    }})(ListView);
 
