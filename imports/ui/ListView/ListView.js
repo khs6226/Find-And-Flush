@@ -6,9 +6,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Washrooms }  from '../../api/washrooms';
 import WashroomItemList from '../WashroomItemList/WashroomItemList'
 
-
 class ListView extends Component {
-
 
     renderWashrooms() {
         console.log(this.props);
