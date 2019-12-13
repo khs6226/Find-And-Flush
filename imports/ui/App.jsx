@@ -1,9 +1,11 @@
 import React from 'react';
 import Washroom from './washroomInfo.jsx';
+import ReviewForm from './ReviewForm'
+
 
 const App = () => (
   <div>
-    <h1>Welcome to Meteor!</h1>
+    <ReviewForm />
     <Washroom />
   </div>
 );
