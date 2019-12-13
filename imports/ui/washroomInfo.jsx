@@ -5,6 +5,7 @@ import { Washrooms } from "../api/washrooms";
 class Washroom extends Component {
   render() {
     console.log(this.props);
+    console.log("remoe this log ^");
     const washrooms = this.props.washrooms.map(washroom =>
       this.makeLink(washroom)
     );

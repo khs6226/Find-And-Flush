@@ -1,13 +1,13 @@
 import React from "react";
-import Hello from "./Hello.jsx";
-import Info from "./Info.jsx";
 import Washroom from "./WashroomInfo";
 import ReviewForm from "./ReviewForm";
 import NavBar from "./NavBar";
+import ListView from "./ListView";
 
 const App = () => (
   <div>
     <NavBar />
+    <ListView />
     {/* <ReviewForm /> */}
     {/* <Washroom /> */}
   </div>
