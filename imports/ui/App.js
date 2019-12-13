@@ -1,12 +1,13 @@
-import React from 'react';
-// import ReviewForm from './ReviewForm'
-import ListView from './ListView/ListView'
-
+import React from "react";
+import ReviewForm from "./ReviewForm";
+import NavBar from "./NavBar";
+import ListView from "./ListView";
 
 const App = () => (
   <div>
-    <h1>Hello</h1>
+    <NavBar />
     <ListView />
+    {/* <ReviewForm /> */}
   </div>
 );
 
