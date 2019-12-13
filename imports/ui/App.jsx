@@ -1,10 +1,11 @@
 import React from 'react';
-import Washroom from './washroomInfo.jsx';
+import Washroom from './WashroomInfo.jsx';
 import ReviewForm from './ReviewForm'
 
 
 const App = () => (
   <div>
+    <h1>Hello</h1>
     <ReviewForm />
     <Washroom />
   </div>
