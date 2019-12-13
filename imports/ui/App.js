@@ -1,5 +1,4 @@
 import React from "react";
-import Washroom from "./WashroomInfo";
 import ReviewForm from "./ReviewForm";
 import NavBar from "./NavBar";
 import ListView from "./ListView";
@@ -9,7 +8,6 @@ const App = () => (
     <NavBar />
     <ListView />
     {/* <ReviewForm /> */}
-    {/* <Washroom /> */}
   </div>
 );
 
