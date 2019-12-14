@@ -3,7 +3,7 @@ import styles from './styles';
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 
-import { Washrooms }  from '../../api/washrooms';
+import { Washrooms } from '../../api/washrooms';
 import WashroomItemList from '../WashroomItemList/WashroomItemList'
 
 class ListView extends Component {
@@ -31,8 +31,9 @@ class ListView extends Component {
 
 export default withTracker(() => {
     Meteor.subscribe('washrooms');
-  
+
     return {
         washrooms: Washrooms.find({}).fetch(),
-    }})(ListView);
+    }
+})(ListView);
 
