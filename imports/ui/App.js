@@ -1,5 +1,5 @@
 import React from "react";
-import ReviewForm from "./ReviewForm/ReviewForm";
+import ReviewForm from "./ReviewForm";
 import NavBar from "./NavBar";
 import ListView from "./ListView"
 
