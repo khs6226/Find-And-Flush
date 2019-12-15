@@ -6,6 +6,12 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import SearchIcon from "@material-ui/icons/Search";
+import WcIcon from "@material-ui/icons/Wc";
+import { Template } from "meteor/templating";
+import { Blaze } from "meteor/blaze";
+import { ButtonBase } from "@material-ui/core";
+import AccountsUIWrapper from "../AccountsUIWrapper";
 
 function ButtonAppBar() {
   const classes = useStyles();
@@ -14,18 +20,16 @@ function ButtonAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            <SearchIcon />+
+            <WcIcon />
+          </Typography>
           <Typography variant="h6" className={classes.title}>
             Find and Flush
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">
+            <AccountsUIWrapper />
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
