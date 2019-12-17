@@ -12,9 +12,11 @@ if (Meteor.isServer) {
   Meteor.methods({
     'washroom.detail'(id) {
       const washroomName = Washrooms.findOne(id).name;
+      const washroomAddress = Washrooms.findOne(id).address;
+
       const ul = document.getElementById("detail");
       console.log(ul);
       console.log(Washrooms.findOne(id));
-      ul.innerHTML = washroomName;
+      ul.innerHTML = washroomName + " : " + washroomAddress;
     }
   });
