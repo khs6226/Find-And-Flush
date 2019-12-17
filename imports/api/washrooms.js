@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
 export const Washrooms = new Mongo.Collection('washrooms');
@@ -8,3 +9,12 @@ if (Meteor.isServer) {
       return Washrooms.find();
     });
   }
+  Meteor.methods({
+    'washroom.detail'(id) {
+      const washroomName = Washrooms.findOne(id).name;
+      const ul = document.getElementById("detail");
+      console.log(ul);
+      console.log(Washrooms.findOne(id));
+      ul.innerHTML = washroomName;
+    }
+  });

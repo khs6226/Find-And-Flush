@@ -2,27 +2,20 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
-
+import ReactDOM from 'react-dom';
 import { Washrooms } from '../../api/washrooms';
 import WashroomItemList from '../WashroomItemList/WashroomItemList'
 
-class ListView extends Component {
-
-    renderWashrooms() {
-        return this.props.washrooms.map((washroom) => (
-            <WashroomItemList key={washroom._id} washroom={washroom} />
-        ));
-    }
+class DetailView extends Component {
 
     render() {
         return (
             <div className="container">
                 <header>
-                    <h1>Washroom List</h1>
+                    <h1>Detail</h1>
                 </header>
+                <ul id="detail">
 
-                <ul>
-                    {this.renderWashrooms()}
                 </ul>
             </div>
         );
@@ -35,5 +28,5 @@ export default withTracker(() => {
     return {
         washrooms: Washrooms.find({}).fetch(),
     }
-})(ListView);
+})(DetailView);
 
