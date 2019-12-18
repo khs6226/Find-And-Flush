@@ -2,8 +2,9 @@ import React from "react";
 import ReviewForm from "./ReviewForm";
 import NavBar from "./NavBar";
 import ListView from "./ListView";
-import DetailView from "./DetailView"
+import DetailView from "./DetailView";
 import AccountsUIWrapper from "./AccountsUIWrapper.js";
+import Reviews from "./Reviews";
 
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
@@ -33,6 +34,7 @@ const App = () => {
       <NavBar />
       <ListView />
       <DetailView />
+      <Reviews />
       <Fab color="primary" aria-label="edit" onClick={handleOpen}>
         <EditIcon />
       </Fab>
@@ -48,8 +50,8 @@ const App = () => {
           timeout: 500
         }}
       >
-        <Fade in={open}> */}
-      <ReviewForm handleClose={handleClose} />
+        <Fade in={open}>
+          <ReviewForm handleClose={handleClose} />
         </Fade>
       </Modal>
     </div>

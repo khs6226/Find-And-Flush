@@ -11,7 +11,7 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 
 const Checkboxes = ({ handleChange, checkLists }) => {
-  console.log(checkLists);
+  // console.log(checkLists);
   return checkLists.map(item => (
     <Grid item xs={4} key={item.name}>
       <FormControlLabel
@@ -36,19 +36,18 @@ const ReviewForm = ({ handleClose }) => {
     { name: "Dryer", checked: false },
     { name: "Paper Towels", checked: false }
   ]);
-  const [value, setValue] = React.useState();
+  const [value, setValue] = React.useState(0);
   useEffect(() => {
     // console.log(state);
   });
   const handleChange = index => event => {
-    // [index]: { ...state[index], checked: event.target.checked }
-    const value = [...state].map(object => {
-      if (object.name === state[index].name) {
-        Object.assign(object, { checked: event.target.checked });
+    const newState = [...state].map(item => {
+      if (item.name === state[index].name) {
+        return Object.assign(item, { checked: event.target.checked });
       }
+      return item;
     });
-    console.log(value);
-    setState();
+    setState(newState);
   };
   return (
     <Paper>

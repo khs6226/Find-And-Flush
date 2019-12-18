@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
-import { Meteor } from 'meteor/meteor';
-
+import React, { Component } from "react";
+import { Meteor } from "meteor/meteor";
 
 export default class WashroomItemList extends Component {
-    showDetail() {
-        Meteor.call('washroom.detail', this.props.washroom._id);
-    }
-    render() {
-        return (
-            <li onClick={this.showDetail.bind(this)}>{this.props.washroom.name}</li>
-        );
-    }
+  showDetail() {
+    Meteor.call("detail", this.props.washroom._id, (error, result) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(result);
+      }
+    });
+  }
+  render() {
+    return (
+      <li onClick={this.showDetail.bind(this)}>{this.props.washroom.name}</li>
+    );
+  }
 }
