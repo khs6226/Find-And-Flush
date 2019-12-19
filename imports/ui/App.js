@@ -48,8 +48,8 @@ const App = () => {
           timeout: 500
         }}
       >
-        <Fade in={open}> */}
-      <ReviewForm handleClose={handleClose} />
+        <Fade in={open}>
+          <ReviewForm handleClose={handleClose} />
         </Fade>
       </Modal>
     </div>
