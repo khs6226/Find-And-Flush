@@ -4,11 +4,13 @@ import React, { Component } from "react";
 import { withTracker } from "meteor/react-meteor-data";
 
 import { Washrooms } from "../../api/washrooms";
+import WashroomContext from "../../api/WashroomContext";
 import WashroomItemList from "../WashroomItemList/WashroomItemList";
 
 class ListView extends Component {
+  static contextType = WashroomContext;
   renderWashrooms() {
-    return this.props.washrooms.map(washroom => (
+    return this.context.map(washroom => (
       <WashroomItemList key={washroom._id} washroom={washroom} />
     ));
   }
@@ -26,10 +28,4 @@ class ListView extends Component {
   }
 }
 
-export default withTracker(() => {
-  Meteor.subscribe("washrooms");
-
-  return {
-    washrooms: Washrooms.find({}).fetch()
-  };
-})(ListView);
+export default ListView;
