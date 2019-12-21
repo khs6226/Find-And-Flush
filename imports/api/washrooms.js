@@ -24,28 +24,30 @@ Meteor.methods({
     var dryer = cursor.dryer;
     var PT = cursor.paperTowel;
 
-    const equipment = (name) => {
-      switch(name) {
+     var equipment = (n) => {
+      switch(n) {
         case true:
-          name = "Yes";
+          n = "Yes";
           break;
         case false:
-          name = "No";
-    }};
+          n = "No";
+    }    return n;
+  };
 
-    equipment(BF);
-    equipment(soap);
-    equipment(TP);
-    equipment(dryer);
-    equipment(PT);
-    
+    switch(soap) {
+      case true:
+        soap = "Yes";
+        break;
+      case false:
+        soap = "No";
+  };
     detail.innerHTML = "Name : " + name + "<br>" + 
                        "Address : " + address + "<br>" +
-                       "Baby Friendly : " + BF + "<br>" +
-                       "Soap : " + soap + "<br>" +
-                       "dryer : " + dryer + "<br>" +
-                       "Toilet Paper : " + TP + "<br>" +
-                       "Paper Towel : " + PT + "<br>";
+                       "Baby Friendly : " + equipment(BF) + "<br>" +
+                       "Soap : " + equipment(soap) + "<br>" +
+                       "dryer : " + equipment(dryer) + "<br>" +
+                       "Toilet Paper : " + equipment(TP) + "<br>" +
+                       "Paper Towel : " + equipment(PT) + "<br>";
   },
   
 });
