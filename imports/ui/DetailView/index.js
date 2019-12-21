@@ -9,19 +9,19 @@ import Button from "@material-ui/core/Button";
 
 class DetailView extends Component {
   render() {
-    const showReview = () => {
+/*     const showReview = () => {
       console.log(this.props.washrooms);
-      // Meteor.call('washroom.review', this.props.washroom._id);
-    };
+      Meteor.call('washroom.review', this.props.washroom._id);
+    }; */
     return (
       <div className="container">
         <header>
           <h1>Detail</h1>
         </header>
         <ul id="detail"></ul>
-        <Button variant="contained" color="primary" onClick={showReview}>
+{/*         <Button variant="contained" color="primary" onClick={showReview}>
           show reviews
-        </Button>
+        </Button> */}
       </div>
     );
   }
