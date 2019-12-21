@@ -5,7 +5,7 @@ import ListView from "./ListView";
 import DetailView from "./DetailView";
 import AccountsUIWrapper from "./AccountsUIWrapper.js";
 import Reviews from "./Reviews";
-
+import Maps from "./Maps";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
@@ -32,6 +32,7 @@ const App = () => {
   return (
     <div>
       <NavBar />
+      <Maps />
       <ListView />
       <DetailView />
       <Reviews />
