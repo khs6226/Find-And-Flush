@@ -7,6 +7,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -20,6 +21,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -33,6 +35,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -46,6 +49,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -59,6 +63,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -72,6 +77,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -85,6 +91,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -98,6 +105,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -111,6 +119,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -124,6 +133,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -137,6 +147,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -150,6 +161,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -163,6 +175,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -176,6 +189,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -189,6 +203,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -202,6 +217,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
@@ -215,6 +231,7 @@
     "soap": true,
     "dryer": true,
     "paperTowel": true,
+    "rate": 0,
     "comments": {
       "userId" : 0,
       "userComments" : ""
