@@ -19,9 +19,9 @@ class DetailView extends Component {
           <h1>Detail</h1>
         </header>
         <ul id="detail"></ul>
-        <Button variant="contained" color="primary" onClick={showReview}>
+{/*         <Button variant="contained" color="primary" onClick={showReview}>
           show reviews
-        </Button>
+        </Button> */}
       </div>
     );
   }
