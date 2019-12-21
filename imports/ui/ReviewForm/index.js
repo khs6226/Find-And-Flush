@@ -28,7 +28,7 @@ const Checkboxes = ({ handleChange, checkLists }) => {
     </Grid>
   ));
 };
-const ReviewForm = ({ handleClose }) => {
+const ReviewForm = ({ handleClose, filter }) => {
   const [state, setState] = useState([
     { name: "Toilet Paper", checked: false },
     { name: "Baby Friendly", checked: false },
@@ -36,7 +36,7 @@ const ReviewForm = ({ handleClose }) => {
     { name: "Dryer", checked: false },
     { name: "Paper Towels", checked: false }
   ]);
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
   useEffect(() => {
     // console.log(state);
   });
@@ -78,6 +78,9 @@ const ReviewForm = ({ handleClose }) => {
           <Grid item xs={4}>
             <Button variant="contained" color="primary">
               submit
+            </Button>
+            <Button variant="contained" color="primary" onClick={filter}>
+              filter
             </Button>
           </Grid>
         </Grid>
