@@ -34,13 +34,6 @@ Meteor.methods({
     }    return n;
   };
 
-    switch(soap) {
-      case true:
-        soap = "Yes";
-        break;
-      case false:
-        soap = "No";
-  };
     detail.innerHTML = "Name : " + name + "<br>" + 
                        "Address : " + address + "<br>" +
                        "Baby Friendly : " + equipment(BF) + "<br>" +
