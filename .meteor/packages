@@ -21,4 +21,3 @@ react-meteor-data       # React higher-order component for reactively tracking M
 dburles:google-maps
 accounts-ui
 accounts-password
-accounts-facebook
