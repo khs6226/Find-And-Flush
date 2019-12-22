@@ -1,5 +1,12 @@
 import React from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import { flexbox } from "@material-ui/system";
+
+const mapStyle = {
+  width: "40%",
+  height: "50%",
+  position: "relative"
+};
 
 class Maps extends React.Component {
   state = {
@@ -32,8 +39,8 @@ class Maps extends React.Component {
     return (
       <Map
         google={this.props.google}
-        style={{ width: "70%", height: "70%", position: "relative" }}
         zoom={14}
+        style={mapStyle}
         initialCenter={{
           lat: 49.277912,
           lng: -123.1173159
