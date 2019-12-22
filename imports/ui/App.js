@@ -5,6 +5,7 @@ import ListView from "./ListView";
 import DetailView from "./DetailView";
 import AccountsUIWrapper from "./AccountsUIWrapper.js";
 import Reviews from "./Reviews";
+import Maps from "./Maps";
 import WashroomProvider from "../api/WashroomProvider";
 
 import Modal from "@material-ui/core/Modal";
@@ -33,6 +34,7 @@ const App = () => {
   return (
     <WashroomProvider>
       <NavBar />
+      <Maps />
       <ListView />
       <DetailView />
       <Reviews />
