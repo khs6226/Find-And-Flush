@@ -21,7 +21,7 @@ function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <SearchIcon />+
+            <SearchIcon />
             <WcIcon />
           </Typography>
           <Typography variant="h6" className={classes.title}>

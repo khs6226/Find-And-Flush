@@ -2,27 +2,45 @@ import { Meteor } from "meteor/meteor";
 import { Mongo } from "meteor/mongo";
 
 export const Washrooms = new Mongo.Collection("washrooms");
-
 if (Meteor.isServer) {
   // This code only runs on the server
   Meteor.publish("washrooms", function tasksPublication() {
     return Washrooms.find();
   });
 }
-Meteor.methods({
-  detail(id) {
-    const washroomName = Washrooms.findOne(id).name;
-    const washroomAddress = Washrooms.findOne(id).address;
-    const ul = document.getElementById("detail");
-    console.log(ul);
-    console.log(Washrooms.findOne(id));
-    ul.innerHTML = washroomName + " : " + washroomAddress;
-    return Washrooms.findOne(id);
-  },
-  reveiw(id) {
-    const washroomName = Washrooms.findOne(id).name;
 
-    const reviews = document.getElementById("reviewContainer");
-    reviews.innerHtml = washroomName;
-  }
+Meteor.methods({
+  
+  
+  detail(id) {
+    const cursor = Washrooms.findOne(id);
+    const detail = document.getElementById("detail");
+    
+    var name = cursor.name;
+    var address = cursor.address;
+    var soap = cursor.soap;
+    var TP = cursor.toiletPaper;
+    var BF = cursor.babyFriendly;
+    var dryer = cursor.dryer;
+    var PT = cursor.paperTowel;
+
+     var equipment = (n) => {
+      switch(n) {
+        case true:
+          n = "Yes";
+          break;
+        case false:
+          n = "No";
+    }    return n;
+  };
+
+    detail.innerHTML = "Name : " + name + "<br>" + 
+                       "Address : " + address + "<br>" +
+                       "Baby Friendly : " + equipment(BF) + "<br>" +
+                       "Soap : " + equipment(soap) + "<br>" +
+                       "dryer : " + equipment(dryer) + "<br>" +
+                       "Toilet Paper : " + equipment(TP) + "<br>" +
+                       "Paper Towel : " + equipment(PT) + "<br>";
+  },
+  
 });

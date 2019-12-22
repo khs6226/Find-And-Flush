@@ -6,6 +6,8 @@ import DetailView from "./DetailView";
 import AccountsUIWrapper from "./AccountsUIWrapper.js";
 import Reviews from "./Reviews";
 import Maps from "./Maps";
+import WashroomProvider from "../api/WashroomProvider";
+
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
@@ -30,7 +32,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <WashroomProvider>
       <NavBar />
       <Maps />
       <ListView />
@@ -55,7 +57,7 @@ const App = () => {
           <ReviewForm handleClose={handleClose} />
         </Fade>
       </Modal>
-    </div>
+    </WashroomProvider>
   );
 };
 
