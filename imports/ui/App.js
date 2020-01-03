@@ -25,9 +25,9 @@ const App = () => {
   return (
     <WashroomProvider>
       <NavBar />
-      <Maps />
+      {/* <Maps /> */}
       <ListView />
-      <DetailView />
+      {/* <DetailView /> */}
       {/* <Reviews /> */}
     </WashroomProvider>
   );

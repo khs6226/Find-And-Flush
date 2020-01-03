@@ -8,9 +8,10 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Rating from "@material-ui/lab/Rating";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
+import DetailView from "../DetailView"
 
 const WashroomItemList = ({ washroom }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = React.useState(false);
   // console.log(washroom.comments)
   const showDetail = event => {
     setOpen(!open);
