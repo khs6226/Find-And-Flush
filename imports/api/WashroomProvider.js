@@ -4,9 +4,15 @@ import { Washrooms } from "./washrooms";
 import WashroomContext from "./WashroomContext";
 
 const WashroomProvider = ({ washrooms, children }) => {
-  // const [Selected, SetSelected] = useState()
+  const [Selected, SetSelected] = useState();
   return (
-    <WashroomContext.Provider value={washrooms}>
+    <WashroomContext.Provider
+      value={{
+        washrooms: washrooms,
+        Selected: Selected,
+        SetSelected: SetSelected
+      }}
+    >
       {children}
     </WashroomContext.Provider>
   );
@@ -17,6 +23,6 @@ export default withTracker(() => {
 
   return {
     washrooms: Washrooms.find({}).fetch(),
-    filterSoap: Washrooms.find({ soap: true }).fetch(),
+    filterSoap: Washrooms.find({ soap: true }).fetch()
   };
 })(WashroomProvider);
