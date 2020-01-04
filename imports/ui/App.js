@@ -7,6 +7,7 @@ import AccountsUIWrapper from "./AccountsUIWrapper.js";
 import Reviews from "./Reviews";
 import WashroomProvider from "../api/WashroomProvider";
 
+
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
@@ -21,6 +22,8 @@ const modalStyle = {
 };
 
 const App = () => {
+
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);

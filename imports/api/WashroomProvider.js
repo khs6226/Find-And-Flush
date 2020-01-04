@@ -16,6 +16,7 @@ export default withTracker(() => {
   Meteor.subscribe("washrooms");
 
   return {
-    washrooms: Washrooms.find({}).fetch()
+    washrooms: Washrooms.find({}).fetch(),
+    filterSoap: Washrooms.find({ soap: true }).fetch(),
   };
 })(WashroomProvider);
