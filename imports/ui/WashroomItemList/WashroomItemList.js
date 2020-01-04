@@ -1,32 +1,38 @@
 import React, { Component } from "react";
 import { Meteor } from "meteor/meteor";
-import { withStyles } from '@material-ui/core/styles';
-import styles from './styles';
+import { withStyles } from "@material-ui/core/styles";
+import styles from "./styles";
 import WashroomContext from "../../api/WashroomContext";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import Rating from "@material-ui/lab/Rating";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import DetailView from "../DetailView"
 
 
-class WashroomItemList extends Component {
-    static contextType = WashroomContext;
-    showDetail() {
-        Meteor.call("detail", this.props.washroom._id, (error, result) => {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log(result);
-            }
-        });
-    }
-    render() {
-        let { classes } = this.props;
-        // console.log(this.context);
-        return (
-            <div className={classes.listContainer}>
-                <li className={classes.listItem} onClick={this.showDetail.bind(this)}>{this.props.washroom.name}</li>
-            </ div >
-        );
-    }
-
-}
-
+const WashroomItemList = ({ washroom }) => {
+  const [open, setOpen] = React.useState(false);
+  // console.log(washroom.comments)
+  const showDetail = event => {
+    setOpen(!open);
+  };
+  // let { classes } = this.props;
+  return (
+    <Grid item xs={12}>
+      <Paper
+        onClick={event => showDetail(event)}
+        style={{ padding: "10px 15px" }}
+      >
+        <Typography>{washroom.name}</Typography>
+        <Typography style={{ display: "flex" }}>
+          <LocationOnIcon />
+          {washroom.address}
+        </Typography>
+        <Rating name="read-only" value={washroom.rate} readOnly />
+        {open ? <DetailView /> : null}
+      </Paper>
+    </Grid>
+  );
+};
 export default withStyles(styles)(WashroomItemList);
-

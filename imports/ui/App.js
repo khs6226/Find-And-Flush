@@ -5,6 +5,7 @@ import ListView from "./ListView";
 import DetailView from "./DetailView";
 import AccountsUIWrapper from "./AccountsUIWrapper.js";
 import Reviews from "./Reviews";
+import Maps from "./Maps";
 import WashroomProvider from "../api/WashroomProvider";
 
 
@@ -22,42 +23,13 @@ const modalStyle = {
 };
 
 const App = () => {
-
-
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   return (
     <WashroomProvider>
       <NavBar />
+      {/* <Maps /> */}
       <ListView />
-      <DetailView />
-      <Reviews />
-      <Fab color="primary" aria-label="edit" onClick={handleOpen}>
-        <EditIcon />
-      </Fab>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        style={modalStyle}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500
-        }}
-      >
-        <Fade in={open}>
-          <ReviewForm handleClose={handleClose} />
-        </Fade>
-      </Modal>
+      {/* <DetailView /> */}
+      {/* <Reviews /> */}
     </WashroomProvider>
   );
 };
