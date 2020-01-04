@@ -8,31 +8,33 @@ import WashroomItemList from "../WashroomItemList/WashroomItemList";
 import Review from "../Reviews";
 import Button from "@material-ui/core/Button";
 
-class DetailView extends Component {
-  render() {
-    /*     const showReview = () => {
+const DetailView = () => {
+  const washroomContext = useContext(WashroomContext);
+  const {
+    toiletPaper,
+    babyFriendly,
+    soap,
+    dryer,
+    paperTowel
+  } = washroomContext.Selected;
+  /*     const showReview = () => {
       console.log(this.props.washrooms);
       Meteor.call('washroom.review', this.props.washroom._id);
     }; */
-    return (
-      <div className="container">
-        <header>
-          <h1>Detail</h1>
-        </header>
-        <ul id="detail" />
-        {/*         <Button variant="contained" color="primary" onClick={showReview}>
-          show reviews
-        </Button> */}
-        <Review review={true} />
-      </div>
-    );
-  }
-}
+  useEffect(() => {});
+  return (
+    <div className="container">
+      <ul id="detail">
+        <li>Toilet paper: {toiletPaper ? "yes" : "no"}</li>
+        <li>Baby friendly: {babyFriendly ? "yes" : "no"}</li>
+        <li>Soap: {soap ? "yes" : "no"}</li>
+        <li>Dryer: {dryer ? "yes" : "no"}</li>
+        <li>Paper towel: {paperTowel ? "yes" : "no"}</li>
+      </ul>
 
-export default withTracker(() => {
-  Meteor.subscribe("washrooms");
+      <Review review={true} />
+    </div>
+  );
+};
 
-  return {
-    washrooms: Washrooms.find({}).fetch()
-  };
-})(DetailView);
+export default DetailView;
