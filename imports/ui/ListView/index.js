@@ -9,44 +9,35 @@ import Button from "@material-ui/core/Button";
 import { Washrooms } from "../../api/washrooms";
 import WashroomContext from "../../api/WashroomContext";
 import WashroomItemList from "../WashroomItemList/WashroomItemList";
-import ReviewForm from "../ReviewForm";
+import Review from "../ReviewButton/Review";
 
 // const handleChange = event => {
 //     setFilter(event.target.value);
 // };
 
-class ListView extends Component {
-  static contextType = WashroomContext;
-  componentDidMount = () => {
-    // console.log(this.context)
-  };
-  renderWashrooms() {
-    return this.context.map((washroom, i) => (
+const ListView = () => {
+  const renderWashrooms = () => {
+    return washrooms.map((washroom, i) => (
       <WashroomItemList key={i} washroom={washroom} />
     ));
-  }
+  };
+  const filter = () => {
+    console.log("filter");
+  };
+  return (
+    <div className="listViewContainer">
+      <header>
+        <Typography variant="h4" component="h1">
+          Washroom List
+        </Typography>
+      </header>
+      <Review filter={filter} review={false} />
 
-  render() {
-    let { classes } = this.props;
-    console.log("props", this.props.washrooms);
-    const filter = () => {
-      console.log("filter");
-    };
-    return (
-      <div className="listViewContainer">
-        <header>
-          <Typography variant="h4" component="h1">
-            Washroom List
-          </Typography>
-        </header>
-        {/* <ReviewForm filter={filter} /> */}
-
-        <Grid container spacing={2}>
-          {this.renderWashrooms()}
-        </Grid>
-      </div>
-    );
-  }
-}
+      <Grid container spacing={2}>
+        {renderWashrooms()}
+      </Grid>
+    </div>
+  );
+};
 
 export default ListView;

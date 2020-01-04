@@ -23,7 +23,7 @@ class DetailView extends Component {
         {/*         <Button variant="contained" color="primary" onClick={showReview}>
           show reviews
         </Button> */}
-        <Review />
+        <Review review={true} />
       </div>
     );
   }

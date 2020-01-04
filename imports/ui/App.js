@@ -25,10 +25,10 @@ const App = () => {
   return (
     <WashroomProvider>
       <NavBar />
-      <Maps />
-      <ListView />
-      <DetailView />
-      {/* <Reviews /> */}
+      <section class="bodyWrap">
+        <ListView />
+        <Maps />
+      </section>
     </WashroomProvider>
   );
 };
