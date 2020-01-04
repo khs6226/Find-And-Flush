@@ -68,7 +68,9 @@ class Maps extends React.Component {
           lng: -123.1173159
         }}
       >
-        {/* <Marker
+        {/* add a for loop
+        
+        <Marker
           name="Public Washrooms"
           onClick={this.onMarkerClick}
           position={{ lat: 49.277912, lng: -123.1173159 }}
