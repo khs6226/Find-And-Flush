@@ -5,6 +5,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Fab from "@material-ui/core/Fab";
 import EditIcon from "@material-ui/icons/Edit";
+import TuneIcon from "@material-ui/icons/Tune";
 
 const modalStyle = {
   display: "flex",
@@ -12,7 +13,7 @@ const modalStyle = {
   justifyContent: "center"
 };
 
-const Review = () => {
+const Review = ({ review }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -23,9 +24,13 @@ const Review = () => {
   };
   return (
     <>
-      <Fab color="primary" aria-label="edit" onClick={handleOpen}>
-        <EditIcon />
-      </Fab>
+      {review ? (
+        <Fab color="primary" aria-label="edit" onClick={handleOpen}>
+          <EditIcon />
+        </Fab>
+      ) : (
+        <TuneIcon onClick={handleOpen} />
+      )}
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

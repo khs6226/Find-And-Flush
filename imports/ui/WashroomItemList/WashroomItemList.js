@@ -12,17 +12,19 @@ import DetailView from "../DetailView"
 
 
 const WashroomItemList = ({ washroom }) => {
-  const [open, setOpen] = React.useState(false);
-  // console.log(washroom.comments)
+  const washroomContext = useContext(WashroomContext);
+  const [open, setOpen] = useState(false);
+  useEffect(() => {});
   const showDetail = event => {
+    event.preventDefault();
     setOpen(!open);
+    washroomContext.SetSelected(washroom);
   };
-  // let { classes } = this.props;
   return (
     <Grid item xs={12}>
       <Paper
-        onClick={event => showDetail(event)}
         style={{ padding: "10px 15px" }}
+        onClick={event => showDetail(event)}
       >
         <Typography>{washroom.name}</Typography>
         <Typography style={{ display: "flex" }}>
