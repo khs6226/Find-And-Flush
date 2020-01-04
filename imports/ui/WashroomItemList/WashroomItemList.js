@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useContext, useState } from "react";
 import { Meteor } from "meteor/meteor";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
@@ -14,7 +14,6 @@ import DetailView from "../DetailView"
 const WashroomItemList = ({ washroom }) => {
   const washroomContext = useContext(WashroomContext);
   const [open, setOpen] = useState(false);
-  useEffect(() => {});
   const showDetail = event => {
     event.preventDefault();
     setOpen(!open);

@@ -1,6 +1,6 @@
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import { withTracker } from "meteor/react-meteor-data";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -17,8 +17,9 @@ import Review from "../ReviewButton/Review";
 // };
 
 const ListView = () => {
+  const washroomContext = useContext(WashroomContext)
   const renderWashrooms = () => {
-    return washrooms.map((washroom, i) => (
+    return washroomContext.washrooms.map((washroom, i) => (
       <WashroomItemList key={i} washroom={washroom} />
     ));
   };

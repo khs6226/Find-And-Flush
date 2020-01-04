@@ -1,12 +1,13 @@
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import { withTracker } from "meteor/react-meteor-data";
 import ReactDOM from "react-dom";
 import { Washrooms } from "../../api/washrooms";
 import WashroomItemList from "../WashroomItemList/WashroomItemList";
-import Review from "../Reviews";
+import Review from "../ReviewButton/Review";
 import Button from "@material-ui/core/Button";
+import WashroomContext from "../../api/WashroomContext"
 
 const DetailView = () => {
   const washroomContext = useContext(WashroomContext);
@@ -21,7 +22,6 @@ const DetailView = () => {
       console.log(this.props.washrooms);
       Meteor.call('washroom.review', this.props.washroom._id);
     }; */
-  useEffect(() => {});
   return (
     <div className="container">
       <ul id="detail">

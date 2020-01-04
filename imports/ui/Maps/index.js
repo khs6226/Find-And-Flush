@@ -3,8 +3,8 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import { flexbox } from "@material-ui/system";
 
 const mapStyle = {
-  width: "40%",
-  height: "50%",
+  width: "50%",
+  height: "100%",
   position: "relative"
 };
 

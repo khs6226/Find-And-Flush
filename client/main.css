@@ -5,7 +5,9 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
-
+ul, li{
+  list-style: none;
+}
 ::-webkit-scrollbar {
   width: 5px;
 }
