@@ -5,7 +5,7 @@ import { withTracker } from "meteor/react-meteor-data";
 import ReactDOM from "react-dom";
 import { Washrooms } from "../../api/washrooms";
 import WashroomItemList from "../WashroomItemList/WashroomItemList";
-import Review from "./Review";
+import Review from "../Reviews";
 import Button from "@material-ui/core/Button";
 
 const DetailView = () => {
