@@ -31,15 +31,16 @@ const ListView = () => {
       <header>
         <Typography variant="h4" component="h1">
           Washroom List
-        </Typography>
-      </header>
-      <Review filter={filter} review={false} />
 
-      <Grid container spacing={2}>
-        {renderWashrooms()}
-      </Grid>
-    </div>
-  );
+        </Typography>
+            </header>
+            <Review filter={filter} review={false} />
+
+            <Grid container spacing={2}>
+                {renderWashrooms()}
+            </Grid>
+        </div>
+    );
 };
 
 export default ListView;
