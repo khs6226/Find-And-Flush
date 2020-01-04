@@ -10,6 +10,7 @@ import Rating from "@material-ui/lab/Rating";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import DetailView from "../DetailView"
 
+
 const WashroomItemList = ({ washroom }) => {
   const [open, setOpen] = React.useState(false);
   // console.log(washroom.comments)

@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
 import { Washrooms } from "../../api/washrooms";
+
 import WashroomContext from "../../api/WashroomContext";
 import WashroomItemList from "../WashroomItemList/WashroomItemList";
 import ReviewForm from "../ReviewForm";
@@ -16,6 +17,39 @@ import ReviewForm from "../ReviewForm";
 // };
 
 class ListView extends Component {
+
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         filteredList = '',
+    //     };
+    // }
+
+ 
+    renderWashrooms() {
+        return this.context.map(washroom => (
+            <WashroomItemList key={washroom._id} washroom={washroom} />
+        ));
+    }
+
+    // renderFilteredWashrooms() {
+
+    // }
+
+
+
+    render() {
+        let { classes } = this.props;
+        // console.log('props', this.props.washrooms)
+
+        const handleFilter = (washroom) => {
+
+            console.log('filter', this.renderWashrooms());
+
+
+        }
+    }
+=======
   static contextType = WashroomContext;
   componentDidMount = () => {
     // console.log(this.context)
@@ -47,6 +81,7 @@ class ListView extends Component {
       </div>
     );
   }
+
 }
 
 export default ListView;
