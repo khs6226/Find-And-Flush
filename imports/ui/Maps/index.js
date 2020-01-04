@@ -21,7 +21,7 @@ class Maps extends React.Component {
   };
 
   onMarkerClick = (props, marker) => {
-    console.log(props, marker);
+    //console.log(props, marker);
     // this.setState({
     //   activeMarker: marker,
     //   selectedPlace: props,
