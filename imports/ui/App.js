@@ -26,7 +26,7 @@ const App = () => {
   return (
     <WashroomProvider>
       <NavBar />
-      <section class="bodyWrap">
+      <section className="bodyWrap">
         <ListView />
         <Maps />
       </section>
