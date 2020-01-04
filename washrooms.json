@@ -2,6 +2,10 @@
   {
     "name": "David Lam Park Public Washroom",
     "address": "300 Pacific Blvd, Vancouver, BC V6Z 2Y1",
+    "position": {
+      "lat": 49.277913,
+      "lng": -123.1173159
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -9,13 +13,17 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
     "name": "Public Washroom",
     "address": "2000 W Georgia St, Vancouver, BC V6G 3E21",
+    "position": {
+      "lat": 49.2828432,
+      "lng": -123.1190605
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -23,13 +31,17 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
     "name": "Harbour Green Park Public Washroom",
     "address": "1199 W Cordova St, Vancouver, BC V6C 3R4",
+    "position": {
+      "lat": 49.289335,
+      "lng": -123.1217715
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -37,8 +49,8 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
@@ -51,13 +63,17 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
     "name": "Granville Park Public Washroom",
     "address": "Central Field House Granville Park, 1600 W 14th Ave, Vancouver, BC",
+    "position": {
+      "lat": 49.2588092,
+      "lng": -123.1420738
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -65,13 +81,17 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
     "name": "Public Washroom",
     "address": "1055 Canada Pl, Vancouver, BC V6C 0C3",
+    "position": {
+      "lat": 49.2883436,
+      "lng": -123.1153855
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -79,8 +99,8 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
@@ -93,13 +113,17 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
     "name": "Tatlow Park Public Washroom",
     "address": "2837 W 3rd Ave, Vancouver, BC V6K 1M8",
+    "position": {
+      "lat": 49.2695388,
+      "lng": -123.1692126
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -107,13 +131,17 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
     "name": "Hadden Park Public Washroom",
     "address": "Vancouver, BC V6J 3R4",
+    "position": {
+      "lat": 49.2275369,
+      "lng": -123.1476764
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -121,13 +149,17 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
     "name": "Grandview Park Public Washrooms",
     "address": "1201-1299 Commercial Dr, Vancouver, BC V5L 2T4",
+    "position": {
+      "lat": 49.2739592,
+      "lng": -123.0695801
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -135,13 +167,17 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
     "name": "Andy Livingstone Park Public Washroom",
     "address": "South Side Field House Andy Livingston Park, 89 Expo Blvd, Vancouver, BC V6B 6N5",
+    "position": {
+      "lat": 49.2788226,
+      "lng": -123.1057978
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -149,13 +185,17 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
     "name": "Firehall Library Public Washroom",
     "address": "1475 W 10th Ave, Vancouver, BC V6H 1J8",
+    "position": {
+      "lat": 49.262872,
+      "lng": -123.137576
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -163,13 +203,17 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
     "name": "Richards Street Public Washroom",
     "address": "1198-1192 Richards St, Vancouver, BC V6B 5B6",
+    "position": {
+      "lat": 49.2759501,
+      "lng": -123.1238664
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -177,13 +221,17 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
     "name": "Stanley Park Public Washroom",
     "address": "Vancouver, BC V6G 2S1",
+    "position": {
+      "lat": 49.2933866,
+      "lng": -123.139224
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -191,13 +239,17 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
     "name": "Carnegie Centre Public Washroom",
     "address": "401 Main St, Vancouver, BC V6A 2T7",
+    "position": {
+      "lat": 49.281052,
+      "lng": -123.1001272
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -205,8 +257,8 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
@@ -219,13 +271,17 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   },
   {
     "name": "Main at Terminal Public Washroom",
     "address": "Vancouver, BC",
+    "position": {
+      "lat": 49.2730027,
+      "lng": -123.0994833
+    },
     "toiletPaper": true,
     "babyFriendly": true,
     "soap": true,
@@ -233,8 +289,8 @@
     "paperTowel": true,
     "rate": 0,
     "comments": {
-      "userId" : 0,
-      "userComments" : ""
+      "userId": 0,
+      "userComments": ""
     }
   }
 ]
