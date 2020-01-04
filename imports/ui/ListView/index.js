@@ -1,6 +1,6 @@
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import { withTracker } from "meteor/react-meteor-data";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -17,19 +17,21 @@ import Review from "../ReviewButton/Review";
 // };
 
 const ListView = () => {
-    const renderWashrooms = () => {
-        return Washrooms.map((washroom, i) => (
-            <WashroomItemList key={i} washroom={washroom} />
-        ));
-    };
-    const filter = () => {
-        console.log("filter");
-    };
-    return (
-        <div className="listViewContainer">
-            <header>
-                <Typography variant="h4" component="h1">
-                    Washroom List
+  const washroomContext = useContext(WashroomContext)
+  const renderWashrooms = () => {
+    return washroomContext.washrooms.map((washroom, i) => (
+      <WashroomItemList key={i} washroom={washroom} />
+    ));
+  };
+  const filter = () => {
+    console.log("filter");
+  };
+  return (
+    <div className="listViewContainer">
+      <header>
+        <Typography variant="h4" component="h1">
+          Washroom List
+
         </Typography>
             </header>
             <Review filter={filter} review={false} />
