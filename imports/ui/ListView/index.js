@@ -17,28 +17,28 @@ import Review from "../ReviewButton/Review";
 // };
 
 const ListView = () => {
-  const renderWashrooms = () => {
-    return washrooms.map((washroom, i) => (
-      <WashroomItemList key={i} washroom={washroom} />
-    ));
-  };
-  const filter = () => {
-    console.log("filter");
-  };
-  return (
-    <div className="listViewContainer">
-      <header>
-        <Typography variant="h4" component="h1">
-          Washroom List
+    const renderWashrooms = () => {
+        return Washrooms.map((washroom, i) => (
+            <WashroomItemList key={i} washroom={washroom} />
+        ));
+    };
+    const filter = () => {
+        console.log("filter");
+    };
+    return (
+        <div className="listViewContainer">
+            <header>
+                <Typography variant="h4" component="h1">
+                    Washroom List
         </Typography>
-      </header>
-      <Review filter={filter} review={false} />
+            </header>
+            <Review filter={filter} review={false} />
 
-      <Grid container spacing={2}>
-        {renderWashrooms()}
-      </Grid>
-    </div>
-  );
+            <Grid container spacing={2}>
+                {renderWashrooms()}
+            </Grid>
+        </div>
+    );
 };
 
 export default ListView;
