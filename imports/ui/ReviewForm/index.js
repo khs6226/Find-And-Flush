@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import FormGroup from "@material-ui/core/FormGroup";
 import Grid from "@material-ui/core/Grid";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -9,8 +9,10 @@ import Rating from "@material-ui/lab/Rating";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-
+import WashroomContext from "../../api/WashroomContext";
 const Checkboxes = ({ handleChange, checkLists }) => {
+  const washroomContext = useContext(WashroomContext);
+  const washroomId = washroomContext.Selected._id._str;
   // console.log(checkLists);
   return checkLists.map(item => (
     <Grid item xs={4} key={item.name}>
@@ -28,7 +30,7 @@ const Checkboxes = ({ handleChange, checkLists }) => {
     </Grid>
   ));
 };
-const ReviewForm = ({ handleClose, filter }) => {
+const ReviewForm = ({ handleClose, filter, review }) => {
   const [state, setState] = useState([
     { name: "Toilet Paper", checked: false },
     { name: "Baby Friendly", checked: false },
@@ -37,6 +39,7 @@ const ReviewForm = ({ handleClose, filter }) => {
     { name: "Paper Towels", checked: false }
   ]);
   const [value, setValue] = useState(0);
+  const [comment, setComment] = useState("");
   useEffect(() => {
     // console.log(state);
   });
@@ -48,6 +51,9 @@ const ReviewForm = ({ handleClose, filter }) => {
       return item;
     });
     setState(newState);
+  };
+  const handleComment = event => {
+    setComment(event.target.value);
   };
   return (
     <Paper>
@@ -73,15 +79,19 @@ const ReviewForm = ({ handleClose, filter }) => {
               defaultValue=""
               variant="outlined"
               style={{ width: "100%" }}
+              onChange={() => handleComment(event)}
             />
           </Grid>
           <Grid item xs={4}>
-            <Button variant="contained" color="primary">
-              submit
-            </Button>
-            <Button variant="contained" color="primary" onClick={filter}>
-              filter
-            </Button>
+            {review ? (
+              <Button variant="contained" color="primary">
+                submit
+              </Button>
+            ) : (
+              <Button variant="contained" color="primary" onClick={filter}>
+                filter
+              </Button>
+            )}
           </Grid>
         </Grid>
       </form>

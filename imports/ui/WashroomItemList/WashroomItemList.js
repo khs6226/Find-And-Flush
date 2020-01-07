@@ -8,8 +8,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Rating from "@material-ui/lab/Rating";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
-import DetailView from "../DetailView"
-
+import DetailView from "../DetailView";
 
 const WashroomItemList = ({ washroom }) => {
   const washroomContext = useContext(WashroomContext);
@@ -21,11 +20,10 @@ const WashroomItemList = ({ washroom }) => {
   };
   return (
     <Grid item xs={12}>
-      <Paper
-        style={{ padding: "10px 15px" }}
-        onClick={event => showDetail(event)}
-      >
-        <Typography>{washroom.name}</Typography>
+      <Paper style={{ padding: "10px 15px" }}>
+        <Typography onClick={event => showDetail(event)}>
+          {washroom.name}
+        </Typography>
         <Typography style={{ display: "flex" }}>
           <LocationOnIcon />
           {washroom.address}
