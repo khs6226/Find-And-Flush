@@ -44,7 +44,7 @@ const Review = ({ review }) => {
         }}
       >
         <Fade in={open}>
-          <ReviewForm handleClose={handleClose} />
+          <ReviewForm handleClose={handleClose} review={review} />
         </Fade>
       </Modal>
     </>
