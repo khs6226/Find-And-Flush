@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Meteor } from "meteor/meteor";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
@@ -18,6 +18,9 @@ const WashroomItemList = ({ washroom }) => {
     setOpen(!open);
     washroomContext.SetSelected(washroom);
   };
+  useEffect(() => {
+    console.log(washroomContext.washrooms);
+  });
   return (
     <Grid item xs={12}>
       <Paper style={{ padding: "10px 15px" }}>

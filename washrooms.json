@@ -12,10 +12,12 @@
     "dryer": true,
     "paperTowel": true,
     "rate": 0,
-    "comments": {
-      "userId": 0,
-      "userComments": ""
-    }
+    "comments": [
+      {
+        "userId": 0,
+        "userComments": ""
+      }
+    ]
   },
   {
     "name": "Public Washroom",
