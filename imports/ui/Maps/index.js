@@ -1,6 +1,7 @@
 import React from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import { flexbox } from "@material-ui/system";
+import WashroomContext from "../../api/WashroomContext";
 
 const mapStyle = {
   width: "50%",
@@ -9,6 +10,7 @@ const mapStyle = {
 };
 
 class Maps extends React.Component {
+  static contextType = WashroomContext;
   constructor(props) {
     super(props);
     this.myRef = React.createRef();
@@ -18,6 +20,21 @@ class Maps extends React.Component {
     activeMarker: {},
     selectedPlace: {},
     showingInfoWindow: false
+  };
+
+  Markers = () => {
+    this.context.washrooms.map((washroom, i) => {
+      // console.log(washroom.position);
+      return (
+        <Marker
+          name={washroom.name}
+          onClick={this.onMarkerClick}
+          position={washroom.position}
+          ref={this.myRef}
+          key={i}
+        />
+      );
+    });
   };
 
   onMarkerClick = (props, marker) => {
@@ -76,7 +93,7 @@ class Maps extends React.Component {
           position={{ lat: 49.277912, lng: -123.1173159 }}
           ref={this.myRef}
         /> */}
-
+        {this.Markers()}
         <InfoWindow
           marker={this.state.activeMarker}
           onClose={this.onInfoWindowClose}

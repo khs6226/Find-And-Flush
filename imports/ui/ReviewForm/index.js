@@ -10,10 +10,10 @@ import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import WashroomContext from "../../api/WashroomContext";
+import { Washrooms } from "../../api/washrooms";
+
 const Checkboxes = ({ handleChange, checkLists }) => {
-  const washroomContext = useContext(WashroomContext);
-  const washroomId = washroomContext.Selected._id._str;
-  // console.log(checkLists);
+  // console.log(washroomId);
   return checkLists.map(item => (
     <Grid item xs={4} key={item.name}>
       <FormControlLabel
@@ -31,6 +31,9 @@ const Checkboxes = ({ handleChange, checkLists }) => {
   ));
 };
 const ReviewForm = ({ handleClose, filter, review }) => {
+  const washroomContext = useContext(WashroomContext);
+  const washroomId = washroomContext.Selected._id._str;
+
   const [state, setState] = useState([
     { name: "Toilet Paper", checked: false },
     { name: "Baby Friendly", checked: false },
@@ -41,7 +44,7 @@ const ReviewForm = ({ handleClose, filter, review }) => {
   const [value, setValue] = useState(0);
   const [comment, setComment] = useState("");
   useEffect(() => {
-    // console.log(state);
+    // console.log(washroomId);
   });
   const handleChange = index => event => {
     const newState = [...state].map(item => {
@@ -54,6 +57,23 @@ const ReviewForm = ({ handleClose, filter, review }) => {
   };
   const handleComment = event => {
     setComment(event.target.value);
+    // console.log(comment);
+  };
+  const updateReview = () => {
+    Washrooms.update(
+      { _id: washroomId },
+      {
+        $set: {
+          comments: [
+            {
+              userId: 1,
+              userComments: comment
+            }
+          ]
+        }
+      }
+    );
+    // console.log("update");
   };
   return (
     <Paper>
@@ -84,7 +104,11 @@ const ReviewForm = ({ handleClose, filter, review }) => {
           </Grid>
           <Grid item xs={4}>
             {review ? (
-              <Button variant="contained" color="primary">
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => updateReview()}
+              >
                 submit
               </Button>
             ) : (

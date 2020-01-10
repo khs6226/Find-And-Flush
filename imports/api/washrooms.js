@@ -7,15 +7,18 @@ if (Meteor.isServer) {
   Meteor.publish("washrooms", function tasksPublication() {
     return Washrooms.find();
   });
+  Washrooms.allow({
+    update: function() {
+      return true;
+    }
+  });
 }
 
 Meteor.methods({
-  
-  
   detail(id) {
     const cursor = Washrooms.findOne(id);
     const detail = document.getElementById("detail");
-    
+
     var name = cursor.name;
     var address = cursor.address;
     var soap = cursor.soap;
@@ -24,23 +27,38 @@ Meteor.methods({
     var dryer = cursor.dryer;
     var PT = cursor.paperTowel;
 
-     var equipment = (n) => {
-      switch(n) {
+    var equipment = n => {
+      switch (n) {
         case true:
           n = "Yes";
           break;
         case false:
           n = "No";
-    }    return n;
-  };
+      }
+      return n;
+    };
 
-    detail.innerHTML = "Name : " + name + "<br>" + 
-                       "Address : " + address + "<br>" +
-                       "Baby Friendly : " + equipment(BF) + "<br>" +
-                       "Soap : " + equipment(soap) + "<br>" +
-                       "dryer : " + equipment(dryer) + "<br>" +
-                       "Toilet Paper : " + equipment(TP) + "<br>" +
-                       "Paper Towel : " + equipment(PT) + "<br>";
-  },
-  
+    detail.innerHTML =
+      "Name : " +
+      name +
+      "<br>" +
+      "Address : " +
+      address +
+      "<br>" +
+      "Baby Friendly : " +
+      equipment(BF) +
+      "<br>" +
+      "Soap : " +
+      equipment(soap) +
+      "<br>" +
+      "dryer : " +
+      equipment(dryer) +
+      "<br>" +
+      "Toilet Paper : " +
+      equipment(TP) +
+      "<br>" +
+      "Paper Towel : " +
+      equipment(PT) +
+      "<br>";
+  }
 });
