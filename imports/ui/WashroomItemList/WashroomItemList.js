@@ -19,7 +19,7 @@ const WashroomItemList = ({ washroom }) => {
     washroomContext.SetSelected(washroom);
   };
   useEffect(() => {
-    console.log(washroomContext.washrooms);
+    // console.log(washroomContext.washrooms);
   });
   return (
     <Grid item xs={12}>

@@ -15,16 +15,14 @@ class Maps extends React.Component {
     super(props);
     this.myRef = React.createRef();
   }
-
-  state = {
-    activeMarker: {},
-    selectedPlace: {},
-    showingInfoWindow: false
-  };
+  // state = {
+  //   activeMarker: {},
+  //   selectedPlace: {},
+  //   showingInfoWindow: false
+  // };
 
   Markers = () => {
-    this.context.washrooms.map((washroom, i) => {
-      // console.log(washroom.position);
+    return this.context.washrooms.map((washroom, i) => {
       return (
         <Marker
           name={washroom.name}
@@ -36,9 +34,14 @@ class Maps extends React.Component {
       );
     });
   };
-
+  getMarker = marker => {
+    console.log(marker);
+  };
   onMarkerClick = (props, marker) => {
-    //console.log(props, marker);
+    // console.log(marker);
+    this.context.SetSelected(props);
+    this.context.SetActiveMarker(marker);
+    this.context.SetshowingInfoWindow(true);
     // this.setState({
     //   activeMarker: marker,
     //   selectedPlace: props,
@@ -46,28 +49,26 @@ class Maps extends React.Component {
     // });
 
     // let propsCopy = JSON.parse(JSON.stringify(props));
-    let propsCopy = props;
-    propsCopy.position = { lat: 49.2828432, lng: -123.1190605 };
+    // let propsCopy = props;
+    // propsCopy.position = { lat: 49.2828432, lng: -123.1190605 };
 
-    this.setState({
-      activeMarker: marker,
-      selectedPlace: propsCopy,
-      showingInfoWindow: true
-    });
+    // this.setState({
+    //   activeMarker: marker,
+    //   selectedPlace: propsCopy,
+    //   showingInfoWindow: true
+    // });
   };
 
-  onInfoWindowClose = () =>
-    this.setState({
-      activeMarker: null,
-      showingInfoWindow: false
-    });
+  onInfoWindowClose = () => {
+    this.context.SetActiveMarker(null);
+    this.context.SetshowingInfoWindow(false);
+  };
 
   onMapClicked = () => {
-    if (this.state.showingInfoWindow)
-      this.setState({
-        activeMarker: null,
-        showingInfoWindow: false
-      });
+    if (this.context.showingInfoWindow) {
+      this.context.SetActiveMarker(null);
+      this.context.SetshowingInfoWindow(false);
+    }
   };
 
   componentDidMount = () => {
@@ -80,27 +81,20 @@ class Maps extends React.Component {
         google={this.props.google}
         zoom={14}
         style={mapStyle}
+        onClick={this.onMapClicked}
         initialCenter={{
           lat: 49.277912,
           lng: -123.1173159
         }}
       >
-        {/* add a for loop
-        
-        <Marker
-          name="Public Washrooms"
-          onClick={this.onMarkerClick}
-          position={{ lat: 49.277912, lng: -123.1173159 }}
-          ref={this.myRef}
-        /> */}
         {this.Markers()}
         <InfoWindow
-          marker={this.state.activeMarker}
+          marker={this.context.activeMarker}
           onClose={this.onInfoWindowClose}
-          visible={this.state.showingInfoWindow}
+          visible={this.context.showingInfoWindow}
         >
           <div>
-            <h1>{this.state.selectedPlace.name}</h1>
+            <p>{this.context.Selected ? this.context.Selected.name : null}</p>
           </div>
         </InfoWindow>
       </Map>
