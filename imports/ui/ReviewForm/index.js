@@ -32,7 +32,9 @@ const Checkboxes = ({ handleChange, checkLists }) => {
 };
 const ReviewForm = ({ handleClose, filter, review }) => {
   const washroomContext = useContext(WashroomContext);
-  const washroomId = washroomContext.Selected._id._str;
+  const washroomId = washroomContext.Selected
+    ? washroomContext.Selected._id._str
+    : null;
 
   const [state, setState] = useState([
     { name: "Toilet Paper", checked: false },

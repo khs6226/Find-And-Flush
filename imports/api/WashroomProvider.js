@@ -5,12 +5,18 @@ import WashroomContext from "./WashroomContext";
 
 const WashroomProvider = ({ washrooms, children }) => {
   const [Selected, SetSelected] = useState();
+  const [activeMarker, SetActiveMarker] = useState({});
+  const [showingInfoWindow, SetshowingInfoWindow] = useState({});
   return (
     <WashroomContext.Provider
       value={{
         washrooms: washrooms,
         Selected: Selected,
-        SetSelected: SetSelected
+        SetSelected: SetSelected,
+        activeMarker: activeMarker,
+        SetActiveMarker: SetActiveMarker,
+        showingInfoWindow: showingInfoWindow,
+        SetshowingInfoWindow: SetshowingInfoWindow
       }}
     >
       {children}
